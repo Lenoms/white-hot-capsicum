@@ -12,7 +12,7 @@ function AlbumsPage() {
         <li>Album 4</li>
         <li>Album 5</li>
       </ul>
-      <Link to="/">Click to go home</Link>
+      <Link to="/white-hot-capsicum/">Click to go home</Link>
     </div>
   );
 }
