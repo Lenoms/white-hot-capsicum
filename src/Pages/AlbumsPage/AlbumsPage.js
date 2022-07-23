@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import LoginButton from "../../Components/LoginButton";
 
 function AlbumsPage() {
   return (
     <div>
+      <LoginButton />
       <h1>Albums</h1>
       <ul>
         <li>Album 1</li>
