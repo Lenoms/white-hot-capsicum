@@ -12,7 +12,7 @@ root.render(
   <Auth0Provider
     domain="dev-2n83tbaw.us.auth0.com"
     clientId="bbkJJjAaJFRbYUKgQwHPd9KrPXH8VyrX"
-    redirectUri={window.location.origin}
+    redirectUri={window.location.origin + "/white-hot-capsicum"}
   >
     <BrowserRouter>
       <React.StrictMode>
