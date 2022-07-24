@@ -1,11 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import LoginButton from "../../Components/LoginButton";
+import { useAuth0 } from "@auth0/auth0-react";
+import LogoutButton from "../../Components/LogoutButton";
 
 function AlbumsPage() {
+  const { isAuthenticated } = useAuth0();
+  const AuthButton = isAuthenticated ? LogoutButton : LoginButton;
   return (
     <div>
-      <LoginButton />
+      <AuthButton />
       <h1>Albums</h1>
       <ul>
         <li>Album 1</li>
