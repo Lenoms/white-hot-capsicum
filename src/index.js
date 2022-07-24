@@ -5,6 +5,23 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 
+import { initializeApp } from "firebase/app";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCDLH2D7oqP2vqc5Mndsr-qnDCrJ0AbQag",
+  authDomain: "white-hot-capsicum.firebaseapp.com",
+  databaseURL:
+    "https://white-hot-capsicum-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "white-hot-capsicum",
+  storageBucket: "white-hot-capsicum.appspot.com",
+  messagingSenderId: "372907690596",
+  appId: "1:372907690596:web:1bc7607efc86c7cb6ced71",
+  measurementId: "G-NSBC15VVHE",
+};
+
+// Initialize Firebase
+initializeApp(firebaseConfig);
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
