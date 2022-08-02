@@ -6,13 +6,14 @@ import LogoutButton from "../../Components/LogoutButton";
 import AddAlbum from "../../Components/AddAlbum/AddAlbum";
 import AlbumReviewService from "../../Services/album-review.service";
 import "./AlbumsPage.css";
+import getRole from "../../Services/auth-service";
 
 function AlbumsPage() {
   const [albums, setAlbums] = useState([]);
   const [loading, setLoading] = useState(true);
-  const { isAuthenticated } = useAuth0();
+  const { isAuthenticated, user } = useAuth0();
   const AuthButton = isAuthenticated ? LogoutButton : LoginButton;
-
+  const role = getRole(user);
   /* Retrieve list of album reviews from database */
 
   useEffect(() => {
@@ -45,7 +46,9 @@ function AlbumsPage() {
         })}
         <Link to="/white-hot-capsicum/">Click to go home</Link>
 
-        <AddAlbum refreshList={refreshList} />
+        {isAuthenticated && role === "Editor" ? (
+          <AddAlbum refreshList={refreshList} />
+        ) : null}
       </div>
     );
   }
