@@ -32,7 +32,6 @@ function AlbumsPage() {
   } else {
     return (
       <div className="albums-page-container">
-        <Link to="/white-hot-capsicum/">Click to go home</Link>
         <h1>Albums</h1>
         <div className="albums-container">
           {albums.map(function (album) {
@@ -43,6 +42,8 @@ function AlbumsPage() {
         {isAuthenticated && role === "Editor" ? (
           <AddAlbum refreshList={refreshList} />
         ) : null}
+
+        <Link to="/white-hot-capsicum/">click to Go home</Link>
       </div>
     );
   }
