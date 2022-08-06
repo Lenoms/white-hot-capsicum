@@ -6,8 +6,9 @@ import "./AddAlbum.css";
 function AddAlbum({ refreshList }) {
   const addAlbum = () => {
     const albumName = document.getElementById("album-name-input").value;
+    const albumArtist = document.getElementById("album-artist-input").value;
     const albumReview = document.getElementById("album-review-input").value;
-    AlbumReviewService.addAlbum(albumName, albumReview);
+    AlbumReviewService.addAlbum(albumName, albumArtist, albumReview);
     refreshList();
     clearInputFields();
   };
@@ -15,12 +16,15 @@ function AddAlbum({ refreshList }) {
   const clearInputFields = () => {
     document.getElementById("album-name-input").value = "";
     document.getElementById("album-review-input").value = "";
+    document.getElementById("album-artist-input").value = "";
   };
 
   return (
     <div className="add-album-container">
       <label htmlFor="album-name">Album Name</label>
       <input id="album-name-input" name="album-name"></input>
+      <label htmlFor="album-artist">Album Artist</label>
+      <input id="album-artist-input" name="album-artist"></input>
       <label htmlFor="album-review">Album Review</label>
       <textarea id="album-review-input" name="album-review"></textarea>
       <button onClick={addAlbum}>Add album</button>

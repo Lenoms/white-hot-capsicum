@@ -1,0 +1,22 @@
+.album-item-container{
+    width: 15%;
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.album-image-container{
+    width: 90%;
+    height: 80%;
+}
+
+.album-image-container img{
+    width: 100%;
+    height: 100%;
+}
+
+.album-information{
+    height: 20%;
+    width: 90%;
+}

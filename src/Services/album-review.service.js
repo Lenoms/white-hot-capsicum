@@ -15,16 +15,17 @@ const AlbumReviewService = {
           resolve(snapshot.val());
         } else {
           console.log("No data available");
-          reject();
+          resolve([]);
         }
       });
     });
   },
 
-  addAlbum: function (albumName, albumReview) {
+  addAlbum: function (albumName, albumArtist, albumReview) {
     const db = getDatabase();
     set(databaseRef(db, "albums/" + albumName), {
       albumName: albumName,
+      albumArtist: albumArtist,
       albumReview: albumReview,
     });
   },
