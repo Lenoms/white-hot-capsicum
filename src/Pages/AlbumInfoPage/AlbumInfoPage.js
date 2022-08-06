@@ -14,7 +14,9 @@ function AlbumInfoPage({ location }) {
         <div className="album-review-box">
           <p>{album.albumReview}</p>
         </div>
-        <Link to="/white-hot-capsicum/albums">back</Link>
+        <Link className="app-link" to="/white-hot-capsicum/albums">
+          back
+        </Link>
       </div>
     );
   } else {

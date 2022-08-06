@@ -10,9 +10,15 @@ function HomePage() {
   const AuthButton = isAuthenticated ? LogoutButton : LoginButton;
   return (
     <div className="home-page-container">
-      <h1>Home</h1>
-      <Link to="/white-hot-capsicum/albums">albums</Link>
-      <Link to="/white-hot-capsicum/artists">artists</Link>
+      <h1>White Hot Capsicum</h1>
+      <div className="home-links-container">
+        <Link className="app-link" to="/white-hot-capsicum/albums">
+          albums
+        </Link>
+        <Link className="app-link" to="/white-hot-capsicum/artists">
+          artists
+        </Link>
+      </div>
       <AuthButton />
     </div>
   );

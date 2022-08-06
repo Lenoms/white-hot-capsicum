@@ -7,3 +7,8 @@
     align-items: center;
     background-color: whitesmoke
 }
+
+.home-links-container{
+    display: flex;
+    margin: 20px;
+}

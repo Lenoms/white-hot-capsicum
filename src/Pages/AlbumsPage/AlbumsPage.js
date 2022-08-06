@@ -28,7 +28,7 @@ function AlbumsPage() {
   };
 
   if (loading) {
-    return <h1>Loading!</h1>;
+    return <div className="albums-page-container">loading...</div>;
   } else {
     return (
       <div className="albums-page-container">
@@ -43,7 +43,9 @@ function AlbumsPage() {
           <AddAlbum refreshList={refreshList} />
         ) : null}
 
-        <Link to="/white-hot-capsicum/">click to Go home</Link>
+        <Link className="app-link" to="/white-hot-capsicum/">
+          click to Go home
+        </Link>
       </div>
     );
   }
