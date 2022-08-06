@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
+import { Auth0Provider } from "@auth0/auth0-react";
 
 import { initializeApp } from "firebase/app";
 
@@ -23,12 +24,19 @@ const firebaseConfig = {
 initializeApp(firebaseConfig);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+console.log(window.location.origin);
 root.render(
-  <BrowserRouter>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </BrowserRouter>
+  <Auth0Provider
+    domain="dev-2n83tbaw.us.auth0.com"
+    clientId="bbkJJjAaJFRbYUKgQwHPd9KrPXH8VyrX"
+    redirectUri={window.location.origin + "/white-hot-capsicum"}
+  >
+    <BrowserRouter>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </BrowserRouter>
+  </Auth0Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
