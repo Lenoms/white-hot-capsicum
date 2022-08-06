@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/white-hot-capsicum/static/css/main.aa5f16d4.css",
-    "main.js": "/white-hot-capsicum/static/js/main.94fe37ee.js",
+    "main.js": "/white-hot-capsicum/static/js/main.740fa3bb.js",
     "static/js/787.1acc0a65.chunk.js": "/white-hot-capsicum/static/js/787.1acc0a65.chunk.js",
     "index.html": "/white-hot-capsicum/index.html",
     "main.aa5f16d4.css.map": "/white-hot-capsicum/static/css/main.aa5f16d4.css.map",
-    "main.94fe37ee.js.map": "/white-hot-capsicum/static/js/main.94fe37ee.js.map",
+    "main.740fa3bb.js.map": "/white-hot-capsicum/static/js/main.740fa3bb.js.map",
     "787.1acc0a65.chunk.js.map": "/white-hot-capsicum/static/js/787.1acc0a65.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.aa5f16d4.css",
-    "static/js/main.94fe37ee.js"
+    "static/js/main.740fa3bb.js"
   ]
 }
