@@ -1,0 +1,17 @@
+.album-info-container{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(221, 255, 244);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.album-review-box{
+    margin: 20px;
+    width: 50%;
+    height: 50%;
+    border: 1px solid black;
+    background-color: white;
+    text-align: left;
+}
