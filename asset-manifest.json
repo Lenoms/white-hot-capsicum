@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/white-hot-capsicum/static/css/main.f4a92c9f.css",
-    "main.js": "/white-hot-capsicum/static/js/main.b3f566fe.js",
+    "main.css": "/white-hot-capsicum/static/css/main.aa5f16d4.css",
+    "main.js": "/white-hot-capsicum/static/js/main.94fe37ee.js",
     "static/js/787.1acc0a65.chunk.js": "/white-hot-capsicum/static/js/787.1acc0a65.chunk.js",
     "index.html": "/white-hot-capsicum/index.html",
-    "main.f4a92c9f.css.map": "/white-hot-capsicum/static/css/main.f4a92c9f.css.map",
-    "main.b3f566fe.js.map": "/white-hot-capsicum/static/js/main.b3f566fe.js.map",
+    "main.aa5f16d4.css.map": "/white-hot-capsicum/static/css/main.aa5f16d4.css.map",
+    "main.94fe37ee.js.map": "/white-hot-capsicum/static/js/main.94fe37ee.js.map",
     "787.1acc0a65.chunk.js.map": "/white-hot-capsicum/static/js/787.1acc0a65.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f4a92c9f.css",
-    "static/js/main.b3f566fe.js"
+    "static/css/main.aa5f16d4.css",
+    "static/js/main.94fe37ee.js"
   ]
 }
