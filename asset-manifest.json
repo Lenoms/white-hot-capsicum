@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/white-hot-capsicum/static/css/main.9a6ae9f1.css",
-    "main.js": "/white-hot-capsicum/static/js/main.0aad529b.js",
+    "main.css": "/white-hot-capsicum/static/css/main.0c386148.css",
+    "main.js": "/white-hot-capsicum/static/js/main.ed9fd5e8.js",
     "static/js/787.1acc0a65.chunk.js": "/white-hot-capsicum/static/js/787.1acc0a65.chunk.js",
     "index.html": "/white-hot-capsicum/index.html",
-    "main.9a6ae9f1.css.map": "/white-hot-capsicum/static/css/main.9a6ae9f1.css.map",
-    "main.0aad529b.js.map": "/white-hot-capsicum/static/js/main.0aad529b.js.map",
+    "main.0c386148.css.map": "/white-hot-capsicum/static/css/main.0c386148.css.map",
+    "main.ed9fd5e8.js.map": "/white-hot-capsicum/static/js/main.ed9fd5e8.js.map",
     "787.1acc0a65.chunk.js.map": "/white-hot-capsicum/static/js/787.1acc0a65.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9a6ae9f1.css",
-    "static/js/main.0aad529b.js"
+    "static/css/main.0c386148.css",
+    "static/js/main.ed9fd5e8.js"
   ]
 }
