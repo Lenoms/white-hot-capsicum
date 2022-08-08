@@ -11,8 +11,8 @@ function AlbumsPage() {
   const [albums, setAlbums] = useState([]);
   const [loading, setLoading] = useState(true);
   const { isAuthenticated, user } = useAuth0();
-  const [albumPointer, setAlbumPointer] = useState(0);
   const role = getRole(user);
+  const [albumPointer, setAlbumPointer] = useState(0);
   /* Retrieve list of album reviews from database */
 
   let albumDisplaySize;

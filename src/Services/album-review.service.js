@@ -4,6 +4,7 @@ import {
   ref as databaseRef,
   get,
   child,
+  remove,
 } from "firebase/database";
 
 const AlbumReviewService = {
@@ -28,6 +29,14 @@ const AlbumReviewService = {
       albumArtist: albumArtist,
       albumReview: albumReview,
     });
+  },
+
+  deleteAlbum: function (albumName, e) {
+    if (!e) var e = window.event;
+    e.cancelBubble = true;
+    if (e.stopPropagation) e.stopPropagation();
+    const db = getDatabase();
+    remove(databaseRef(db, "albums/" + albumName));
   },
 };
 

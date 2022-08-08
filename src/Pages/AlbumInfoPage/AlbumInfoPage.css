@@ -27,3 +27,14 @@
         width: 90%;
     }
 }
+
+.delete-button{
+    width: 100px;
+    height: 30px;;
+    background-color: grey;
+    cursor: pointer;
+}
+
+.delete-button:hover{
+    background-color: rgb(176, 176, 176);
+}
