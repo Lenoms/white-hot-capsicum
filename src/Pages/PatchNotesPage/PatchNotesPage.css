@@ -14,9 +14,21 @@
     flex-direction: column;
     padding: 30px;
     align-items: flex-start;
-    border: 1px solid purple;
+    border: 5px solid purple;
 }
 
 .patch-note{
     
+}
+
+@media (min-width: 600px) {
+    .patch-notes{
+        width: 50%;
+    }
+}
+
+@media (max-width: 600px) {
+    .patch-notes{
+        width: 80%;
+    }
 }
