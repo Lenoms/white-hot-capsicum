@@ -18,6 +18,9 @@ function HomePage() {
         <Link className="app-link" to="/white-hot-capsicum/artists">
           artists
         </Link>
+        <Link className="app-link" to="/white-hot-capsicum/patch-notes">
+          patch notes
+        </Link>
       </div>
       <AuthButton />
     </div>

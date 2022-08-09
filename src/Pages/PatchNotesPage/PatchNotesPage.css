@@ -1,0 +1,22 @@
+.patch-notes-page-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.patch-notes{
+    height: 75%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    align-items: flex-start;
+    border: 1px solid purple;
+}
+
+.patch-note{
+    
+}
