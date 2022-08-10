@@ -47,7 +47,19 @@ function AlbumsPage({ location }) {
   };
 
   const incrementAlbums = () => {
-    if (!(albumPointer + albumDisplaySize > albums.length)) {
+    // Check if artist filter exists. If it does, the length of our albums to display is just however many
+    // albums that artist matches to
+    let length = 0;
+    if (artistFilter != "") {
+      for (let i = 0; i < albums.length; i++) {
+        if (albums[i].albumArtist == artistFilter) {
+          length++;
+        }
+      }
+    } else {
+      length = albums.length;
+    }
+    if (!(albumPointer + albumDisplaySize > length)) {
       setAlbumPointer(albumPointer + albumDisplaySize);
     }
   };
