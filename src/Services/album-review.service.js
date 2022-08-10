@@ -22,6 +22,19 @@ const AlbumReviewService = {
     });
   },
 
+  getArtists: function () {
+    return new Promise(function (resolve, reject) {
+      const artists = [];
+      AlbumReviewService.getAlbums().then((data) => {
+        const albums = Object.values(data);
+        for (let i = 0; i < albums.length; i++) {
+          artists.push(albums[i].albumArtist);
+        }
+        resolve(artists);
+      });
+    });
+  },
+
   addAlbum: function (albumName, albumArtist, albumReview) {
     const db = getDatabase();
     set(databaseRef(db, "albums/" + albumName), {

@@ -7,10 +7,11 @@ import "./AlbumsPage.css";
 import getRole from "../../Services/auth-service";
 import AlbumItem from "../../Components/AlbumItem/AlbumItem";
 
-function AlbumsPage() {
+function AlbumsPage({ location }) {
   const [albums, setAlbums] = useState([]);
   const [loading, setLoading] = useState(true);
   const { isAuthenticated, user } = useAuth0();
+  const [artistFilter, setArtistFilter] = useState("");
   const role = getRole(user);
   const [albumPointer, setAlbumPointer] = useState(0);
   /* Retrieve list of album reviews from database */
@@ -27,7 +28,17 @@ function AlbumsPage() {
       setAlbums(Object.values(data));
       setLoading(false);
     });
+    if (location.state) {
+      setArtistFilter(location.state.artistName);
+    }
   }, []);
+
+  const filterAlbumByArtist = (artistName) => {
+    if (artistFilter == "") {
+      return true;
+    }
+    return artistFilter == artistName;
+  };
 
   const refreshList = () => {
     AlbumReviewService.getAlbums().then((data) => {
@@ -52,9 +63,16 @@ function AlbumsPage() {
   } else {
     return (
       <div className="albums-page-container">
-        <h1>Albums</h1>
+        {artistFilter == "" ? (
+          <h1>Albums</h1>
+        ) : (
+          <h1>Albums by {artistFilter}</h1>
+        )}
         <div className="albums-container">
           {albums
+            .filter((album) => {
+              return filterAlbumByArtist(album.albumArtist);
+            })
             .slice(albumPointer, albumPointer + albumDisplaySize)
             .map(function (album) {
               return <AlbumItem album={album} />;

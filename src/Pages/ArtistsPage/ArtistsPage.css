@@ -2,6 +2,27 @@
     width: 100%;
     height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: rgb(221, 255, 244);
+}
+
+.artists-container{
+    height: 40%;
+    padding: 5px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+@media (min-width: 600px) {
+    .artists-container{
+        width: 50%;
+    }
+}
+
+@media (max-width: 600px) {
+    .artists-container{
+        width: 90%;
+    }
 }

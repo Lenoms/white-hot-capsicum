@@ -15,7 +15,10 @@ function AppRoutes() {
         path="/white-hot-capsicum/patch-notes"
         element={<PatchNotesPage />}
       />
-      <Route path="/white-hot-capsicum/albums" element={<AlbumsPage />} />
+      <Route
+        path="/white-hot-capsicum/albums"
+        element={<AlbumsPage location={location} />}
+      />
       <Route path="/white-hot-capsicum/artists" element={<ArtistsPage />} />
       <Route
         path="/white-hot-capsicum/album-info"
