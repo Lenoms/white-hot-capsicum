@@ -32,9 +32,7 @@ root.render(
     redirectUri={window.location.origin + "/white-hot-capsicum"}
   >
     <BrowserRouter>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
+      <App />
     </BrowserRouter>
   </Auth0Provider>
 );

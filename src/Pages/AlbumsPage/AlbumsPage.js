@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import AddAlbum from "../../Components/AddAlbum/AddAlbum";
@@ -11,10 +11,10 @@ function AlbumsPage({ location }) {
   const [albums, setAlbums] = useState([]);
   const [loading, setLoading] = useState(true);
   const { isAuthenticated, user } = useAuth0();
-  const [artistFilter, setArtistFilter] = useState("");
   const role = getRole(user);
+  const [artistFilter, setArtistFilter] = useState();
   const [albumPointer, setAlbumPointer] = useState(0);
-  /* Retrieve list of album reviews from database */
+  const didMount = useRef(false);
 
   let albumDisplaySize;
   if (window.innerWidth > 600) {
@@ -24,14 +24,30 @@ function AlbumsPage({ location }) {
   }
 
   useEffect(() => {
-    AlbumReviewService.getAlbums().then((data) => {
-      setAlbums(Object.values(data));
-      setLoading(false);
-    });
     if (location.state) {
       setArtistFilter(location.state.artistName);
+    } else {
+      setArtistFilter("");
     }
   }, []);
+
+  /* Retrieve list of album reviews from database */
+  useEffect(() => {
+    // This is to force the album fetch to wait until artistFilter has been set.
+    if (!didMount.current) {
+      didMount.current = true;
+      return;
+    } else {
+      AlbumReviewService.getAlbums().then((data) => {
+        setAlbums(
+          Object.values(data).filter((album) => {
+            return filterAlbumByArtist(album.albumArtist);
+          })
+        );
+        setLoading(false);
+      });
+    }
+  }, [artistFilter]);
 
   const filterAlbumByArtist = (artistName) => {
     if (artistFilter == "") {
@@ -47,19 +63,7 @@ function AlbumsPage({ location }) {
   };
 
   const incrementAlbums = () => {
-    // Check if artist filter exists. If it does, the length of our albums to display is just however many
-    // albums that artist matches to
-    let length = 0;
-    if (artistFilter != "") {
-      for (let i = 0; i < albums.length; i++) {
-        if (albums[i].albumArtist == artistFilter) {
-          length++;
-        }
-      }
-    } else {
-      length = albums.length;
-    }
-    if (!(albumPointer + albumDisplaySize > length)) {
+    if (!(albumPointer + albumDisplaySize > albums.length)) {
       setAlbumPointer(albumPointer + albumDisplaySize);
     }
   };
@@ -82,9 +86,6 @@ function AlbumsPage({ location }) {
         )}
         <div className="albums-container">
           {albums
-            .filter((album) => {
-              return filterAlbumByArtist(album.albumArtist);
-            })
             .slice(albumPointer, albumPointer + albumDisplaySize)
             .map(function (album) {
               return <AlbumItem album={album} />;
