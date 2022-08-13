@@ -4,6 +4,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import AlbumReviewService from "../../Services/album-review.service";
 import getRole from "../../Services/auth-service";
 import "./AlbumInfoPage.css";
+import CommentSection from "../../Components/CommentSection/CommentSection";
 
 function AlbumInfoPage({ location }) {
   const navigate = useNavigate();
@@ -20,22 +21,26 @@ function AlbumInfoPage({ location }) {
 
     return (
       <div className="album-info-container">
-        <h1>
-          {album.albumName} by {album.albumArtist}
-        </h1>
-        <div className="album-review-box">
-          <p>{album.albumReview}</p>
+        <div className="albums-info-content-container">
+          <h1>
+            {album.albumName} by {album.albumArtist}
+          </h1>
+          <div className="album-review-box">
+            <p>{album.albumReview}</p>
+          </div>
+
+          {isAuthenticated && role === "Editor" ? (
+            <button onClick={deleteAlbum} className="delete-button">
+              Delete
+            </button>
+          ) : null}
+
+          <CommentSection albumName={album.albumName} />
+
+          <Link className="app-link" to="/white-hot-capsicum/albums">
+            back
+          </Link>
         </div>
-
-        {isAuthenticated && role === "Editor" ? (
-          <button onClick={deleteAlbum} className="delete-button">
-            Delete
-          </button>
-        ) : null}
-
-        <Link className="app-link" to="/white-hot-capsicum/albums">
-          back
-        </Link>
       </div>
     );
   } else {

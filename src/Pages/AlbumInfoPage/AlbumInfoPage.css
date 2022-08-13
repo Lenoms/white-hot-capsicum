@@ -7,26 +7,35 @@
     align-items: center;
 }
 
-.album-review-box{
-    margin: 20px;
-    width: 50%;
-    height: 50%;
-    border: 1px solid black;
-    background-color: white;
-    text-align: left;
+.albums-info-content-container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 @media (min-width: 600px) {
-    .album-review-box{
+    .albums-info-content-container{
         width: 50%;
     }
 }
 
 @media (max-width: 600px) {
-    .album-review-box{
+    .albums-info-content-container{
         width: 90%;
     }
 }
+
+.album-review-box{
+    width: 100%;
+    height: 45%;
+    border: 1px solid black;
+    background-color: white;
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    overflow: auto;
+}
+
 
 .delete-button{
     width: 100px;
