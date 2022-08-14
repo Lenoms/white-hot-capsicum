@@ -11,9 +11,8 @@ function PatchNotesPage() {
         <div className="patch-notes-break"></div>
         <p className="patch-note">- added artists page</p>
         <div className="patch-notes-break"></div>
-        <p className="patch-note">
-          - added comments section. please dont inject SQL
-        </p>
+        <p className="patch-note">- added comments section.</p>
+        <p className="patch-note">- fixed sizing</p>
       </div>
       <Link className="app-link" to="/white-hot-capsicum/">
         click to Go home
