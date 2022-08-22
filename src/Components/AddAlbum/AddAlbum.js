@@ -8,9 +8,13 @@ function AddAlbum({ refreshList }) {
     const albumName = document.getElementById("album-name-input").value;
     const albumArtist = document.getElementById("album-artist-input").value;
     const albumReview = document.getElementById("album-review-input").value;
-    AlbumReviewService.addAlbum(albumName, albumArtist, albumReview);
-    refreshList();
-    clearInputFields();
+
+    // TODO dispaly error message regarding required fields
+    if (albumName && albumArtist && albumReview) {
+      AlbumReviewService.addAlbum(albumName, albumArtist, albumReview);
+      refreshList();
+      clearInputFields();
+    }
   };
 
   const clearInputFields = () => {
