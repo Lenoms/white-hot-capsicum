@@ -6,6 +6,7 @@ import AlbumReviewService from "../../Services/album-review.service";
 import "./AlbumsPage.css";
 import getRole from "../../Services/auth-service";
 import AlbumItem from "../../Components/AlbumItem/AlbumItem";
+import Pagination from "../../Components/Pagination/Pagination";
 
 function AlbumsPage({ location }) {
   const [albums, setAlbums] = useState([]);
@@ -62,18 +63,6 @@ function AlbumsPage({ location }) {
     });
   };
 
-  const incrementAlbums = () => {
-    if (!(albumPointer + albumDisplaySize > albums.length)) {
-      setAlbumPointer(albumPointer + albumDisplaySize);
-    }
-  };
-
-  const decrementAlbums = () => {
-    if (!(albumPointer - albumDisplaySize < 0)) {
-      setAlbumPointer(albumPointer - albumDisplaySize);
-    }
-  };
-
   if (loading) {
     return <div className="albums-page-container">loading...</div>;
   } else {
@@ -92,14 +81,12 @@ function AlbumsPage({ location }) {
             })}
         </div>
 
-        <div className="pagination-bar">
-          <div className="pagination-button" onClick={decrementAlbums}>
-            &lt;
-          </div>
-          <div className="pagination-button" onClick={incrementAlbums}>
-            &gt;
-          </div>
-        </div>
+        <Pagination
+          albumPointer={albumPointer}
+          setAlbumPointer={setAlbumPointer}
+          albumsLength={albums.length}
+          albumDisplaySize={albumDisplaySize}
+        />
 
         {isAuthenticated && role === "Editor" ? (
           <AddAlbum refreshList={refreshList} />
