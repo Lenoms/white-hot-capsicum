@@ -46,7 +46,14 @@ function LatestListingsPage() {
       <div className="albums-page-container">
         <h1>Latest listings</h1>
         {albums.length > 0 && (
-          <div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
             <div className="albums-container">
               {albums
                 .slice(albumPointer, albumPointer + albumDisplaySize)
