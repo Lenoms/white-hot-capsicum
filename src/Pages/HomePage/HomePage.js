@@ -16,7 +16,7 @@ function HomePage() {
           albums
         </Link>
         <Link className="app-link" to="/white-hot-capsicum/recently-added">
-          recently added
+          latest listings
         </Link>
         <Link className="app-link" to="/white-hot-capsicum/artists">
           artists
