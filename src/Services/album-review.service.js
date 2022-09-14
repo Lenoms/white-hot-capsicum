@@ -38,11 +38,13 @@ const AlbumReviewService = {
   },
 
   addAlbum: function (albumName, albumArtist, albumReview) {
+    let d = new Date();
     const db = getDatabase();
     set(databaseRef(db, "albums/" + albumName), {
       albumName: albumName,
       albumArtist: albumArtist,
       albumReview: albumReview,
+      dateCreated: d.toString(),
     });
   },
 

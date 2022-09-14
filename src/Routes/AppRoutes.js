@@ -5,6 +5,7 @@ import AlbumsPage from "../Pages/AlbumsPage/AlbumsPage";
 import ArtistsPage from "../Pages/ArtistsPage/ArtistsPage";
 import AlbumInfoPage from "../Pages/AlbumInfoPage/AlbumInfoPage";
 import PatchNotesPage from "../Pages/PatchNotesPage/PatchNotesPage";
+import RecentlyAddedPage from "../Pages/RecentlyAddedPage/RecentlyAddedPage";
 
 function AppRoutes() {
   let location = useLocation();
@@ -23,6 +24,10 @@ function AppRoutes() {
       <Route
         path="/white-hot-capsicum/album-info"
         element={<AlbumInfoPage location={location} />}
+      />
+      <Route
+        path="/white-hot-capsicum/recently-added"
+        element={<RecentlyAddedPage />}
       />
     </Routes>
   );
