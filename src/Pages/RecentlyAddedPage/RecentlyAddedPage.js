@@ -45,21 +45,29 @@ function RecentlyAddedPage() {
     return (
       <div className="albums-page-container">
         <h1>Recently Added Albums</h1>
+        {albums.length > 0 && (
+          <div>
+            <div className="albums-container">
+              {albums
+                .slice(albumPointer, albumPointer + albumDisplaySize)
+                .map(function (album) {
+                  return <AlbumItem album={album} />;
+                })}
+            </div>
 
-        <div className="albums-container">
-          {albums
-            .slice(albumPointer, albumPointer + albumDisplaySize)
-            .map(function (album) {
-              return <AlbumItem album={album} />;
-            })}
-        </div>
-
-        <Pagination
-          albumPointer={albumPointer}
-          setAlbumPointer={setAlbumPointer}
-          albumsLength={albums.length}
-          albumDisplaySize={albumDisplaySize}
-        />
+            <Pagination
+              albumPointer={albumPointer}
+              setAlbumPointer={setAlbumPointer}
+              albumsLength={albums.length}
+              albumDisplaySize={albumDisplaySize}
+            />
+          </div>
+        )}
+        {albums.length == 0 && (
+          <div className="albums-container">
+            No recent albums to show, Jack has been lazy af{" "}
+          </div>
+        )}
 
         <Link className="app-link" to="/white-hot-capsicum/">
           click to Go home
