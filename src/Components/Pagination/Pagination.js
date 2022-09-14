@@ -7,8 +7,9 @@ function Pagination({
   albumsLength,
   albumDisplaySize,
 }) {
+  console.log(albumDisplaySize, albumPointer);
   const incrementAlbums = () => {
-    if (!(albumPointer + albumDisplaySize > albumsLength)) {
+    if (!(albumPointer + albumDisplaySize >= albumsLength)) {
       setAlbumPointer(albumPointer + albumDisplaySize);
     }
   };
