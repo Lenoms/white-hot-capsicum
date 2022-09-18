@@ -40,7 +40,9 @@ const AlbumReviewService = {
   addAlbum: function (albumName, albumArtist, albumReview) {
     let d = new Date();
     const db = getDatabase();
-    set(databaseRef(db, "albums/" + albumName), {
+    const noSpecialCharactersKey = albumName.replace(/[.$#[\]/]/g, "");
+    if (noSpecialCharactersKey.length == 0) return;
+    set(databaseRef(db, "albums/" + noSpecialCharactersKey), {
       albumName: albumName,
       albumArtist: albumArtist,
       albumReview: albumReview,
@@ -53,7 +55,8 @@ const AlbumReviewService = {
     e.cancelBubble = true;
     if (e.stopPropagation) e.stopPropagation();
     const db = getDatabase();
-    remove(databaseRef(db, "albums/" + albumName));
+    const noSpecialCharactersKey = albumName.replace(/[.$#[\]/]/g, "");
+    remove(databaseRef(db, "albums/" + noSpecialCharactersKey));
   },
 
   getComments: function (albumName) {
